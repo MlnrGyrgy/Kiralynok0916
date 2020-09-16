@@ -36,19 +36,21 @@ namespace Kiralynok0916
                 }
             }
         }
-        public void UresOszlop()
+        public int UresOszlop()
         {
-
+            return 0;
         }
-        public void UresSor()
+        public int UresSor()
         {
-
+            return 0;
         }
     }
     class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Királynők feladat");
+            Console.ReadKey();
         }
     }
 }
