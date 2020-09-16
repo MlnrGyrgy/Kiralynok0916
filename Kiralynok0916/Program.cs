@@ -8,7 +8,7 @@ namespace Kiralynok0916
 {
     class Tabla
     {
-        char[,] tomb = new char[8,8];
+        char[,] tomb;
         char UresCella;
         int UresSorokSzama;
         int UresOszlopokSzama;
@@ -24,9 +24,17 @@ namespace Kiralynok0916
         {
 
         }
-        public Tabla(char kter)
+        public Tabla(char ch)
         {
-
+            tomb = new char[8, 8];
+            UresCella = ch;
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 8; j++)
+                {
+                    tomb[i, j] = UresCella;
+                }
+            }
         }
         public void UresOszlop()
         {
