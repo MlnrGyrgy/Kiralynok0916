@@ -12,13 +12,24 @@ namespace Kiralynok0916
         char UresCella;
         int UresSorokSzama;
         int UresOszlopokSzama;
-        public void Elhelyezes()
+        public void Elhelyezes(int N)
         {
-
+            //1. Véletlen helyérték létrehozása
+            //  -Random osztály [0,7]
+            //  - véletlen sor, oszlop kell
+            //  - elhelyezzük a 'K'-t csak akkor, 
+            //  -         HA!!4négy4! üres -> #
+            Random vel = new Random();
+            int sor = vel.Next(0, 8);
+            int oszlop = vel.Next(0, 8);
+            if (tomb[sor,oszlop]=='#')
+            {
+                tomb[sor, oszlop] = 'K';
+            }            
         }
         public void FajlbaIr()
         {
-
+            
         }
         public void Megjelenit()
         {
@@ -60,6 +71,9 @@ namespace Kiralynok0916
 
             Tabla t = new Tabla('#');
             Console.WriteLine("Üres tábla: ");
+            t.Megjelenit();
+            t.Elhelyezes(1);
+            Console.WriteLine();
             t.Megjelenit();
             Console.ReadKey();
         }
