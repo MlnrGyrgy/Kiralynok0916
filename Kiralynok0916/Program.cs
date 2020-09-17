@@ -20,12 +20,17 @@ namespace Kiralynok0916
             //  - elhelyezzük a 'K'-t csak akkor, 
             //  -         HA!!4négy4! üres -> #
             Random vel = new Random();
-            int sor = vel.Next(0, 8);
-            int oszlop = vel.Next(0, 8);
-            if (tomb[sor,oszlop]=='#')
+            for (int i = 0; i < N; i++)
             {
+                int sor = vel.Next(0, 8);
+                int oszlop = vel.Next(0, 8);
+                while (tomb[sor, oszlop] == 'K')
+                {
+                   sor = vel.Next(0, 8);
+                   oszlop = vel.Next(0, 8);
+                }
                 tomb[sor, oszlop] = 'K';
-            }            
+            }
         }
         public void FajlbaIr()
         {
@@ -72,7 +77,7 @@ namespace Kiralynok0916
             Tabla t = new Tabla('#');
             Console.WriteLine("Üres tábla: ");
             t.Megjelenit();
-            t.Elhelyezes(1);
+            t.Elhelyezes(15);
             Console.WriteLine();
             t.Megjelenit();
             Console.ReadKey();
