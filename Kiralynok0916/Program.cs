@@ -59,13 +59,35 @@ namespace Kiralynok0916
                 }
             }
         }
-        public int UresOszlop()
+        public bool UresOszlop(int oszlop)
         {
-            return 0;
+            while (true)
+            {
+                int i = 0;
+                if(tomb[oszlop, i] == 'K' && tomb[oszlop, i] != '#')
+                {
+                    i++;
+                    return false;
+                }
+                else { return true; }
+            }
+   
         }
-        public int UresSor()
+        public bool UresSor(int sor)
         {
-            return 0;
+            int i = 0;
+            while (true)
+            {
+                if (tomb[sor, i] == 'K' && tomb[sor, i] != '#')
+                {
+                    i++;
+                    return false;
+                    
+                }
+                else { return true; }
+                
+            }
+
         }
     }
     class Program
